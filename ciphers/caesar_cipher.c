@@ -3,15 +3,15 @@
 #include <string.h>
 #include <ctype.h>
 
-char* caesarCipher(int, char*, char);
+char* cCipher(int, char*, char);
 
 int main () {
   char text[] = "Hello World! ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   char *encryptedText;
   char *decryptedText;
 
-  encryptedText = caesarCipher(1, text, 'e');
-  decryptedText = caesarCipher(1, encryptedText, 'd');
+  encryptedText = cCipher(1, text, 'e');
+  decryptedText = cCipher(1, encryptedText, 'd');
 
   printf("Plain text: %s\n", text);
   printf("Encrypted text with key 1: %s\n", encryptedText);
@@ -22,7 +22,7 @@ int main () {
   return 0;
 }
 
-char* caesarCipher(int key, char *text, char opt) {
+char* cCipher(int key, char *text, char opt) {
   char alphabet[26];
   int offset = 65;
   int textSize = strlen(text);
